@@ -1,0 +1,29 @@
+name: Windows build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout com submódulo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Gerar editor.exe
+        run: npm run dist:win
+      - name: Publicar artefatos
+        uses: actions/upload-artifact@v4
+        with:
+          name: motor-editor-windows
+          path: release/*

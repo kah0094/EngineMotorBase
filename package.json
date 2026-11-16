@@ -1,0 +1,43 @@
+{
+  "name": "motor-editor",
+  "version": "0.1.0",
+  "description": "Editor desktop nativo para a engine Motor",
+  "main": "desktop/main.js",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "test:engine": "npm --prefix motor test",
+    "dist:win": "electron-builder --win nsis portable",
+    "dist:dir": "electron-builder --dir"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.kyanthx.motor.editor",
+    "productName": "Motor Editor",
+    "artifactName": "Motor-Editor-${version}-${arch}.${ext}",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "motor/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Motor Editor"
+    }
+  }
+}
