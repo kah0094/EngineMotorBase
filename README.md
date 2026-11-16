@@ -2,7 +2,7 @@
 
 Editor nativo para Windows da engine [motor](https://github.com/kyanthx-dv/motor). Esta versão não embrulha o editor web antigo: ela possui uma interface própria inspirada no fluxo do Godot e do Phaser Editor.
 
-## O que existe na versão 0.2.0
+## O que existe na versão 0.3.0
 
 - Tela inicial de escolha e criação de projeto.
 - Projetos recentes persistidos localmente.
@@ -11,6 +11,7 @@ Editor nativo para Windows da engine [motor](https://github.com/kyanthx-dv/motor
 - Canvas próprio para visualizar e editar objetos básicos da cena.
 - Inspetor para nome, posição, rotação, forma, cor e dimensões.
 - Editor de código Monaco com abas e destaque de sintaxe JavaScript.
+- Programação visual com eventos, movimento, controle, variáveis, listas e geração de código compatível com o runtime.
 - Um único fluxo nativo de abrir/salvar projeto JSON.
 - Menus nativos conectados ao projeto atual.
 - Engine original mantida separada como submódulo Git em `motor/`.
@@ -44,11 +45,11 @@ Depois de fazer o build, publique o pacote com o GitHub CLI:
 
 ```bash
 gh auth status
-gh release create v0.2.0 \
+gh release create v0.3.0 \
   release/Motor-Studio-Windows-x64.zip \
   --repo kah0094/EngineMotorBase \
-  --title "Motor Studio 0.2.0" \
+  --title "Motor Studio 0.3.0" \
   --notes "Primeiro release do editor nativo Windows. Extraia o ZIP e execute Motor Studio.exe dentro da pasta win-unpacked."
 ```
 
-Para uma versão futura, aumente a versão no `package.json`, faça commit, gere o novo ZIP e troque `v0.2.0` pela nova tag. Não publique o `.exe` isolado: publique o ZIP completo.
+Para uma versão futura, aumente a versão no `package.json`, faça commit, gere o novo ZIP e troque `v0.3.0` pela nova tag. Não publique o `.exe` isolado: publique o ZIP completo.

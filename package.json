@@ -1,6 +1,6 @@
 {
   "name": "motor-editor",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Editor desktop nativo para a engine Motor",
   "main": "desktop/main.js",
   "private": true,
