@@ -1,6 +1,6 @@
 {
   "name": "motor-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Editor desktop nativo para a engine Motor",
   "main": "desktop/main.js",
   "private": true,
@@ -8,8 +8,11 @@
   "scripts": {
     "start": "electron .",
     "test:engine": "npm --prefix motor test",
-    "dist:win": "electron-builder --win nsis portable",
+    "dist:win": "electron-builder --win dir --x64",
     "dist:dir": "electron-builder --dir"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.52.2"
   },
   "devDependencies": {
     "electron": "^39.2.7",
@@ -17,7 +20,7 @@
   },
   "build": {
     "appId": "com.kyanthx.motor.editor",
-    "productName": "Motor Editor",
+    "productName": "Motor Studio",
     "artifactName": "Motor-Editor-${version}-${arch}.${ext}",
     "directories": {
       "output": "release"
@@ -29,8 +32,7 @@
     ],
     "win": {
       "target": [
-        { "target": "nsis", "arch": ["x64"] },
-        { "target": "portable", "arch": ["x64"] }
+        { "target": "dir", "arch": ["x64"] }
       ]
     },
     "nsis": {
